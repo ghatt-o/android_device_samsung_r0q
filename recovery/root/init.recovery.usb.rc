@@ -48,6 +48,8 @@ on fs
     mkdir /dev/usb-ffs/fastboot 0770 system system
     mount functionfs fastboot /dev/usb-ffs/fastboot rmode=0770,fmode=0660,uid=1000,gid=1000
     mount functionfs mtp /dev/usb-ffs/mtp uid=2000,gid=2000
+    start adbd
+    start fastbootd
 
 on property:sys.usb.config=adb
     start adbd
